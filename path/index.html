@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <h1>Hello World!</h1>
+  <h1>Hello World1!</h1>
   <p id="param"><b>Query Param: </b></p>
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
@@ -34,7 +34,7 @@
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
     async function main() {
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
+      await liff.init({ liffId: "2004768287-qvl8Ge5w" })
       if (liff.isLoggedIn()) {
         getUserProfile()
       } else {
