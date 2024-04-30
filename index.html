@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <h1>Check 3.15</h1>
+  <h1>Check 3.16</h1>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -46,6 +46,11 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function createUniversalLink() {
+      const link1 = liff.permanentLink.createUrl();
+      document.getElementById("universalLink1").append(link1);
+      liff.permanentLink.setExtraQueryParam('param=9');
+      const link2 = liff.permanentLink.createUrl();
+      document.getElementById("universalLink2").append(link2);
     }
 
     async function shareMsg() {
@@ -144,7 +149,7 @@
       // }else{
       //   liff.login();
       // }
-      // createUniversalLink()
+      createUniversalLink()
     }
     main()
   </script>
