@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <h1>Check 3.12</h1>
+  <h1>Check 3.13</h1>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -127,10 +127,15 @@
 
     async function main() {
       await liff.init({ liffId: "2004768287-qvl8Ge5w" })
-      getEnvironment()
+      document.getElementById("usLoggedIn").append(liff.isLoggedIn());
+      if(liff.isLoggedIn()){
+        getEnvironment()
       getUserProfile()
       getContext()
       getFriendship()
+      }else{
+        liff.login();
+      }
       // createUniversalLink()
     }
     main()
