@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>New45</h1>
+  <h1>Version 1</h1>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -35,7 +35,9 @@
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
+  <button id="btnFlex" onclick="sendFlex()">Sent Flex messages</button>
 
+  <!-- สร้างเครื่องมือเพื่อดูDebug -->
   <script src="js/vconsole.min.js"></script>
   <script>
     var vConsole = new VConsole()
@@ -106,6 +108,10 @@
       }
     }
 
+    async function sendFlex(){
+      alert("hello");
+    }
+
     function getContext() {
       if (liff.getContext() != null) {
         document.getElementById("type").append(liff.getContext().type)
@@ -141,6 +147,7 @@
     }
 
     async function main() {
+      // เช็คว่า liff พร้อมไหม
       liff.ready.then(() => {
         document.getElementById("isLoggedIn").append(liff.isLoggedIn())
         if (liff.isLoggedIn()) {
