@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Add Flex</h1>
+  <h1>Add Flex deBug</h1>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -35,7 +35,7 @@
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
-  <button id="btnFlex" onclick="sendFlex()">Sent Flex messages</button>
+  <button id="btnFlex" onclick="sendFlex()">Send Flex messages</button>
 
   <!-- สร้างเครื่องมือเพื่อดูDebug -->
   <script src="js/vconsole.min.js"></script>
@@ -107,7 +107,6 @@
         alert("Message sent")
       }
     }
-
     async function sendFlex(){
   if(liff.getContext().type !== "none"){
     await liff.sendMessages([
@@ -137,87 +136,58 @@
             "type": "box",
             "layout": "vertical",
             "contents": [
-            {
-  "type": "bubble",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "Flex Message Corp",
-        "color": "#FFFFFF"
-      }
-    ],
-    "backgroundColor": "#00B900"
-  },
-  "hero": {
-    "type": "image",
-    "url": "https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/294105628_5334907676589941_7193552205340986144_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=onZ0K2PtBXIQ7kNvgFL6jDz&_nc_ht=scontent.fbkk12-5.fna&oh=00_AfCtbOXblCnB2Y2_z-Wmgevn_9Tee7RnPtnVFYj9CYfHkg&oe=6638DA28",
-    "size": "xl"
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "Phunsup Suwannasophon",
-        "align": "center",
-        "weight": "bold",
-        "size": "lg"
-      },
-      {
-        "type": "text",
-        "text": "Silpakorn University",
-        "align": "center"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "Visit our website",
-              "uri": "https://github.com/artvengers"
-            },
-            "style": "primary",
-            "margin": "md"
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "Register with us",
-              "uri": "https://line.me/ti/p/9FwmSkxb4X"
-            },
-            "style": "secondary",
-            "margin": "md"
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "Call Us Now",
-              "uri": "tel:+66928899534"
-            },
-            "margin": "md"
-          }
-        ]
-      }
-    ]
-  }
-}
+              {
+                "type": "text",
+                "text": "Phunsup Suwannasophon",
+                "align": "center",
+                "weight": "bold",
+                "size": "lg"
+              },
+              {
+                "type": "text",
+                "text": "Silpakorn University",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "Visit our website",
+                      "uri": "https://github.com/artvengers"
+                    },
+                    "style": "primary"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "Register with us",
+                      "uri": "https://line.me/ti/p/9FwmSkxb4X"
+                    },
+                    "style": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "Call Us Now",
+                      "uri": "tel:+66928899534"
+                    }
+                  }
+                ]
+              }
             ]
           }
         }
       }
     ]);
-    alert("Flex sent");
   }
 }
+
 
     function getContext() {
       if (liff.getContext() != null) {
